@@ -48,6 +48,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     override fun onMapReady(googleMap: GoogleMap) {
         map = googleMap //initialise map
+        // Position for reference
+        addMarkersHospital()
+
         getCurrentLocation()
     }
     private fun setupLocClient() {
@@ -67,11 +70,34 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         private const val TAG = "MapsActivity" // for debugging
     }
 
+    private fun addMarkersHospital() {
+        // Agregamos los hospitales a mano (solo por esta entrega)
+        val enmanuel = LatLng(-33.491521753615245, -70.616164983397)
+        map.addMarker(MarkerOptions().position(enmanuel).title("Centro Medico Enmanuel y Cia"))
+
+        val galm = LatLng(-33.493245474913344, -70.61480592251705)
+        map.addMarker(MarkerOptions().position(galm).title("GALM Macul"))
+
+        val centrosj = LatLng(-33.49702815888123, -70.6149152530082)
+        map.addMarker(MarkerOptions().position(centrosj).title("Centro Medico San Joaquín"))
+
+        val clinicauc = LatLng(-33.49512197009499, -70.60762109403308)
+        map.addMarker(MarkerOptions().position(clinicauc).title("Clinica UC"))
+
+        val buenasalud = LatLng(-33.48820226926813, -70.59770345582156)
+        map.addMarker(MarkerOptions().position(buenasalud).title("Clínica Hogar Buena Salud"))
+
+        val sanjuan = LatLng(-33.485181069119996, -70.59305125801616)
+        map.addMarker(MarkerOptions().position(sanjuan).title("Orden Hospitalaria Hnos de San Juan de Dios"))
+
+        val hogarancianos = LatLng(-33.4906790594855, -70.59125335846853)
+        map.addMarker(MarkerOptions().position(hogarancianos).title("Hogar De Ancianos El Atardecer"))
+    }
+
     private fun getCurrentLocation() {
         // Check if the ACCESS_FINE_LOCATION permission was granted before requesting a location
-        if (ActivityCompat.checkSelfPermission(this,
-                Manifest.permission.ACCESS_FINE_LOCATION) !=
-            PackageManager.PERMISSION_GRANTED) {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
+            && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
 
             // call requestLocPermissions() if permission isn't granted
             requestLocPermissions()
