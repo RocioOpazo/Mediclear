@@ -76,22 +76,34 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         map.addMarker(MarkerOptions().position(enmanuel).title("Centro Medico Enmanuel y Cia"))
 
         val galm = LatLng(-33.493245474913344, -70.61480592251705)
-        map.addMarker(MarkerOptions().position(galm).title("GALM Macul"))
+        map.addMarker(MarkerOptions().position(galm).title("GALM Macul").alpha(
+            0.5F
+        ))
 
         val centrosj = LatLng(-33.49702815888123, -70.6149152530082)
-        map.addMarker(MarkerOptions().position(centrosj).title("Centro Medico San Joaquín"))
+        map.addMarker(MarkerOptions().position(centrosj).title("Centro Medico San Joaquín").alpha(
+            0.5F
+        ))
 
         val clinicauc = LatLng(-33.49512197009499, -70.60762109403308)
-        map.addMarker(MarkerOptions().position(clinicauc).title("Clinica UC"))
+        map.addMarker(MarkerOptions().position(clinicauc).title("Clinica UC").alpha(
+            0.5F
+        ))
 
         val buenasalud = LatLng(-33.48820226926813, -70.59770345582156)
-        map.addMarker(MarkerOptions().position(buenasalud).title("Clínica Hogar Buena Salud"))
+        map.addMarker(MarkerOptions().position(buenasalud).title("Clínica Hogar Buena Salud").alpha(
+            0.5F
+        ))
 
         val sanjuan = LatLng(-33.485181069119996, -70.59305125801616)
-        map.addMarker(MarkerOptions().position(sanjuan).title("Orden Hospitalaria Hnos de San Juan de Dios"))
+        map.addMarker(MarkerOptions().position(sanjuan).title("Orden Hospitalaria Hnos de San Juan de Dios").alpha(
+            0.5F
+        ))
 
         val hogarancianos = LatLng(-33.4906790594855, -70.59125335846853)
-        map.addMarker(MarkerOptions().position(hogarancianos).title("Hogar De Ancianos El Atardecer"))
+        map.addMarker(MarkerOptions().position(hogarancianos).title("Hogar De Ancianos El Atardecer").alpha(
+            0.5F
+        ))
     }
 
     private fun getCurrentLocation() {
